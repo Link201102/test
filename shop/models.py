@@ -49,3 +49,12 @@ class Product(models.Model):
 
     class Meta:
         pass
+
+
+class Description(models.Model):
+    type = models.CharField("type", max_length=250, null=False, blank=False)
+
+    country = models.CharField("country", max_length=250, null=False, blank=False)
+
+    class Meta:
+        pass
