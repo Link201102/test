@@ -47,14 +47,35 @@ class Product(models.Model):
 
     description = models.TextField("description", blank=True, null=True)
 
+    Characteristics = models.ForeignKey(
+        "Characteristics",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+    )
+
     class Meta:
         pass
 
 
-class Description(models.Model):
+class Characteristics(models.Model):
     type = models.CharField("type", max_length=250, null=False, blank=False)
 
     country = models.CharField("country", max_length=250, null=False, blank=False)
+
+    model = models.CharField("model", max_length=250, null=False, blank=False)
+
+    code = models.CharField("code", max_length=250, null=False, blank=False)
+
+    year = models.CharField("year", max_length=250, null=False, blank=False)
+
+    material = models.CharField("material", max_length=250, null=False, blank=False)
+
+    color = models.CharField("color", max_length=250, null=False, blank=False)
+
+    size = models.CharField("size", max_length=250, null=False, blank=False)
+
+    weight = models.CharField("weight", max_length=250, null=False, blank=False)
 
     class Meta:
         pass
