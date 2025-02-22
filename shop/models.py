@@ -5,7 +5,6 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField("category_name", max_length=250, db_index=True)
     parent = models.ForeignKey(
-        "Parent",
         "self",
         on_delete=models.CASCADE,
         related_name="children",
